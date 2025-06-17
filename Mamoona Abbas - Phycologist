@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title> MAMOONA ABBAS - Expert Psychologist | Luxury Care & Appointments</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1b1b1b, #2c2c2c);
+    color: #e4e6eb;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  a {
+    color: #a57cf0;
+    text-decoration: none;
+  }
+  a:hover,
+  button:hover {
+    color: #d1b3ff;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(90deg, #3c0076, #6e3fd7);
+    padding: 24px 0;
+    box-shadow: 0 4px 20px rgba(107,56,172,0.7);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #f5e6ff;
+    letter-spacing: 2px;
+    user-select: none;
+  }
+  nav a {
+    margin-left: 32px;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  nav a:focus-visible {
+    outline: 2px solid #a57cf0;
+    outline-offset: 2px;
+  }
+
+  /* Hero */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0d9a87e1-be57-44d8-b244-21c9c889993e.png') no-repeat center center/cover;
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 0, 70, 0.65);
+    z-index: 0;
+  }
+  .hero-content {
+    position: relative;
+    max-width: 720px;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #e4e6eb;
+    margin-bottom: 10px;
+  }
+  .hero .slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: #d1b3ff;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+  .hero p {
+    font-size: 1.3rem;
+    color: #dcdde1;
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #8553c4 0%, #b083ff 100%);
+    padding: 16px 42px;
+    border-radius: 32px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(168,118,239,0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: linear-gradient(135deg, #a177ff 0%, #d7bbff 100%);
+    box-shadow: 0 12px 40px rgba(215,187,255,0.85);
+    outline: none;
+  }
+  .btn-primary:focus-visible {
+    outline: 3px solid #d7bbff;
+    outline-offset: 4px;
+  }
+
+  /* About Section */
+  section.about {
+    padding: 80px 24px 120px;
+    background: #2e1c59;
+    border-radius: 32px;
+    margin: -80px auto 80px;
+    max-width: 720px;
+    box-shadow: 0 8px 30px rgba(133,83,196,0.5);
+  }
+  section.about h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: #f3eaff;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  section.about p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #dcdde1;
+    margin-bottom: 16px;
+  }
+  .qualification-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 40px;
+  }
+  .qualification-list li {
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    color: #cdbaff;
+  }
+  .qualification-list li .material-icons {
+    margin-right: 12px;
+    color: #a57cf0;
+  }
+
+  /* Appointment Section */
+  section.appointment {
+    background: linear-gradient(135deg, #3a1472, #7041c1);
+    padding: 80px 24px 120px;
+    border-radius: 32px;
+    max-width: 720px;
+    margin: 0 auto 120px;
+    box-shadow: 0 8px 40px rgba(112, 65, 193, 0.6);
+  }
+  section.appointment h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    text-align: center;
+    color: #f3eaff;
+    margin-bottom: 32px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #e0d7ff;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="time"],
+  select,
+  textarea {
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    background: #ffffff11;
+    color: #eee;
+    transition: background 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="date"]:focus,
+  input[type="time"]:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid #a57cf0;
+    background: #ffffff2c;
+  }
+  textarea {
+    min-height: 100px;
+  }
+  .form-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .submit-button {
+    max-width: 200px;
+    align-self: center;
+    background: #a57cf0;
+    color: white;
+    cursor: pointer;
+    border-radius: 32px;
+    padding: 16px 0;
+    font-weight: 700;
+    font-size: 1.15rem;
+    border: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(133, 83, 196, 0.7);
+  }
+  .submit-button:hover,
+  .submit-button:focus {
+    background: #c3a3e8;
+    box-shadow: 0 12px 28px rgba(124, 90, 235, 0.8);
+    outline: none;
+  }
+  .submit-button:focus-visible {
+    outline: 3px solid #d7bbff;
+    outline-offset: 4px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 24px 12px;
+    color: #999;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    nav a {
+      font-size: 1.1rem;
+    }
+    .hero h1 {
+      font-size: 4.8rem;
+    }
+    section.about, section.appointment {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav a {
+      margin-left: 16px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+    }
+    .qualification-list {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container" role="banner">
+    <div class="logo" aria-label="Dr. MAMOONA ABBAS">Dr. MAMOONA ABBAS</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="#about" tabindex="0">About</a>
+      <a href="#appointment" tabindex="0">Appointment</a>
+      <a href="#contact" tabindex="0">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="Welcome section with psychologist overview">
+    <div class="hero-content">
+      <h1>MAMOONA ABBAS - Expert Psychologist</h1>
+      <p class="slogan">Your thoughts matter - Let's understand them together.</p>
+      <p>
+        Welcome to your trusted destination for exceptional psychological care. As a certified psychologist
+        from Pakistan, I hold a Master of Science (MSc) degree in Psychology and have completed an intensive internship at Children Hospital Multan. 
+        I specialize in compassionate, evidence-based treatment for Down Syndrome, DASS (Depression, Anxiety, and Stress Scale), and Trauma emergencies. 
+        My dedication and extensive experience ensure personalized therapy empowering you to achieve mental wellness and resilience.
+      </p>
+      <button class="btn-primary" onclick="document.getElementById('appointment').scrollIntoView({behavior:'smooth'})" aria-label="Book an Appointment">Book an Appointment</button>
+    </div>
+  </section>
+
+  <section class="about container" id="about" tabindex="-1" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Dr. MAMOONA ABBAS</h2>
+    <p>
+      I hold an advanced academic qualification with a Master of Science (MSc) in Psychology. My professional role and position are centered around providing outstanding psychological assessments and evidence-based therapeutic interventions. I have maintained a grade of excellence and am committed to continuous professional development.
+    </p>
+    <p>
+      With profound knowledge and hands-on experience working within Children Hospital Multan during my internship, I bring expertise in developmental and emotional disorders. I have a proven track record of effective therapy and care for individuals impacted by:
+    </p>
+    <ul class="qualification-list" aria-label="Key areas of expertise">
+      <li><span class="material-icons" aria-hidden="true">psychology</span> Down Syndrome</li>
+      <li><span class="material-icons" aria-hidden="true">mood</span> DASS (Depression, Anxiety, Stress Scale)</li>
+      <li><span class="material-icons" aria-hidden="true">healing</span> Trauma</li>
+    </ul>
+    <p>
+      My holistic, patient-centric approach combines scientific rigor with empathy and practical strategies to guide clients toward psychological health and personal growth.
+    </p>
+  </section>
+
+  <section class="appointment container" id="appointment" tabindex="-1" aria-labelledby="appointment-heading">
+    <h2 id="appointment-heading">Schedule Your Appointment</h2>
+    <form id="appointmentForm" aria-describedby="appointment-instructions" novalidate>
+      <p id="appointment-instructions" style="color:#cdbaff;text-align:center; margin-bottom:24px;">
+        Please fill in the form below to request an appointment. Upon submission, you will receive a confirmation, and I will be notified by email with all the details.
+      </p>
+      <div class="form-row">
+        <label for="fullName">Full Name <span aria-hidden="true" style="color:#a57cf0;">*</span></label>
+        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" aria-required="true" />
+      </div>
+      <div class="form-row">
+        <label for="email">Email Address <span aria-hidden="true" style="color:#a57cf0;">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" aria-required="true" />
+      </div>
+      <div class="form-row">
+        <label for="appointmentDate">Preferred Date <span aria-hidden="true" style="color:#a57cf0;">*</span></label>
+        <input type="date" id="appointmentDate" name="appointmentDate" required aria-required="true" />
+      </div>
+      <div class="form-row">
+        <label for="appointmentTime">Preferred Time <span aria-hidden="true" style="color:#a57cf0;">*</span></label>
+        <input type="time" id="appointmentTime" name="appointmentTime" required aria-required="true" />
+      </div>
+      <div class="form-row">
+        <label for="topic">Reason for Appointment</label>
+        <select id="topic" name="topic" aria-required="false">
+          <option value="" selected disabled>Select a topic</option>
+          <option value="Down Syndrome Consultation">Down Syndrome Consultation</option>
+          <option value="DASS Assessment & Therapy">DASS Assessment & Therapy</option>
+          <option value="Trauma Counseling">Trauma Counseling</option>
+          <option value="General Psychological Support">General Psychological Support</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">Additional Details / Questions</label>
+        <textarea id="message" name="message" placeholder="Provide any relevant information..."></textarea>
+      </div>
+      <button type="submit" class="submit-button" aria-label="Submit appointment request">Request Appointment</button>
+      <p id="formStatus" role="alert" aria-live="polite" style="margin-top: 16px; text-align:center;"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 MAMOONA ABBAS. All rights reserved.
+</footer>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init('YOUR_USER_ID'); // => Replace 'YOUR_USER_ID' with your actual EmailJS user ID
+  })();
+
+  const form = document.getElementById('appointmentForm');
+  const formStatus = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    formStatus.textContent = '';
+
+    // Basic validation
+    const fullName = form.fullName.value.trim();
+    const email = form.email.value.trim();
+    const date = form.appointmentDate.value;
+    const time = form.appointmentTime.value;
+    const topic = form.topic.value || 'Not specified';
+    const message = form.message.value.trim() || 'None';
+
+    if (!fullName) {
+      formStatus.textContent = 'Please enter your full name.';
+      form.fullName.focus();
+      return;
+    }
+    if (!email || !validateEmail(email)) {
+      formStatus.textContent = 'Please enter a valid email address.';
+      form.email.focus();
+      return;
+    }
+    if (!date) {
+      formStatus.textContent = 'Please select your preferred appointment date.';
+      form.appointmentDate.focus();
+      return;
+    }
+    if (!time) {
+      formStatus.textContent = 'Please select your preferred appointment time.';
+      form.appointmentTime.focus();
+      return;
+    }
+
+    formStatus.textContent = 'Sending your appointment request...';
+
+    // Prepare the email parameters for EmailJS
+    const templateParams = {
+      doctor_name: 'MAMOONA ABBAS',
+      patient_name: fullName,
+      patient_email: email,
+      appointment_date: date,
+      appointment_time: time,
+      appointment_topic: topic,
+      additional_message: message,
+      to_email: 'Memoonamalik920@gmail.com'  // doctor's email to receive notification
+    };
+
+    // Send email using EmailJS - replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS service and template IDs
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+      .then(function(response) {
+        formStatus.textContent = 'Thank you, your appointment request has been sent successfully. You will be contacted soon!';
+        form.reset();
+      }, function(error) {
+        formStatus.textContent = 'Oops! Something went wrong while sending your request. Please try again later.';
+        console.error('EmailJS error:', error);
+      });
+  });
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+</script>
+</body>
+</html>
+
